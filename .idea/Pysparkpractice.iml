@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <content url="file://$USER_HOME$/Spark/spark-3.3.1-bin-hadoop3" />
+    <content url="jar://$USER_HOME$/Spark/spark-3.3.1-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip!/" />
+    <content url="jar://$USER_HOME$/Spark/spark-3.3.1-bin-hadoop3/python/lib/pyspark.zip!/" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (Pysparkpractice)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
