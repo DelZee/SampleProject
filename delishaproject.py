@@ -27,10 +27,12 @@ df_actlog.show()
 df_actlog.write.mode("overwrite").saveAsTable("DEL.activitytable")
 spark.sql("select * from activitytable limit(5)").show()
 
+#periodic csv dumps in this table.
 spark.sql("CREATE  TABLE IF NOT EXISTS DEL.project (user_id int,file_name string,time_stmp bigint) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','STORED AS TEXTFILE tblproperties('skip.header.line.count'='1')")
 
 
 ## USER_TOTAL TABLE
+##creating the user total table
 spark.sql("""CREATE TABLE IF NOT EXISTS  DEL.user_total
           (time_ran timestamp
           ,total_users int
@@ -38,6 +40,7 @@ spark.sql("""CREATE TABLE IF NOT EXISTS  DEL.user_total
           ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
           STORED AS TEXTFILE""")
 
+##creating the user report table
 spark.sql("""CREATE TABLE IF NOT EXISTS DEL.user_report
           (user_id int
           ,total_updates int
