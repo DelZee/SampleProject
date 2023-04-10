@@ -24,10 +24,29 @@ if __name__ == "__main__":
 #creating a dataframe for the csv file
 products = spark.read.option("Header", True).csv("C:/Users/delis/Documents/Products/products.csv")
 products.show()
+products.printSchema()
+print(type(products))
+
 sales = spark.read.option("Header", True).csv("C:/Users/delis/Documents/Products/sales.csv")
 sales.show()
+
 sellers = spark.read.option("Header", True).csv("C:/Users/delis/Documents/Products/sellers.csv")
 sellers.show()
+
+#joining two dataframes
+
+products.join(sales,
+              products.product_id == sales.product_id,
+              "inner").drop(products.product_id).show()
+
+
+
+
+
+
+
+
+
 
 #Creating SQL Tables
 spark.read \
